@@ -1,6 +1,41 @@
-<mat-card>
-  <mat-card-title>Mat Card Title</mat-card-title>
-  <mat-card-subtitle>Mat Card Subtitle</mat-card-subtitle>
-  <mat-card-content>Mat Card content</mat-card-content>
-</mat-card>
+<mat-toolbar>
+  <span>Angular Card Dealer</span>
+</mat-toolbar>
+<section class="create-hand">
+  <mat-card>
+    <mat-card-title>CUSTOMIZE HAND</mat-card-title>
+    <mat-card-subtitle>Use the filters to create a custom deal</mat-card-subtitle>
+  </mat-card>
 
+  <mat-form-field>
+    <input matInput type="number" placeholder="Hand Size">
+  </mat-form-field>
+
+  <mat-card>
+    <mat-form-field>
+      <mat-select placeholder="Min Card Value">
+        <mat-option *ngFor="let cardValue of cardValues" [value]="cardValue">
+          {{cardValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Max Card Value">
+        <mat-option *ngFor="let cardValue of cardValues" [value]="cardValue">
+          {{cardValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-subtitle>Select Suits</mat-card-subtitle>
+    <mat-checkbox class="suit-check">Spade</mat-checkbox>
+    <mat-checkbox class="suit-check">Club</mat-checkbox>
+    <mat-checkbox class="suit-check">Diamond</mat-checkbox>
+    <mat-checkbox class="suit-check">Heart</mat-checkbox>
+  </mat-card>
+
+  <button mat-fab color="primary">Deal</button>
+</section>

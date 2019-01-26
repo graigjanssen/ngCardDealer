@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngCardDealer';
+  cardValues = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+  handFilters = {
+    suits: [],
+    size: 1,
+    min: '',
+    max: ''
+  }
 }
