@@ -8,12 +8,14 @@
   </mat-card>
 
   <mat-form-field>
-    <input matInput type="number" placeholder="Hand Size">
+    <input matInput type="number" placeholder="Hand Size"
+           [(ngModel)]="handFilters.size">
   </mat-form-field>
 
   <mat-card>
     <mat-form-field>
-      <mat-select placeholder="Min Card Value">
+      <mat-select placeholder="Min Card Value"
+                  [(ngModel)]="handFilters.min">
         <mat-option *ngFor="let cardValue of cardValues" [value]="cardValue">
           {{cardValue}}
         </mat-option>
@@ -21,7 +23,8 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Max Card Value">
+      <mat-select placeholder="Max Card Value"
+                  [(ngModel)]="handFilters.max">
         <mat-option *ngFor="let cardValue of cardValues" [value]="cardValue">
           {{cardValue}}
         </mat-option>
@@ -31,11 +34,11 @@
 
   <mat-card>
     <mat-card-subtitle>Select Suits</mat-card-subtitle>
-    <mat-checkbox class="suit-check">Spade</mat-checkbox>
-    <mat-checkbox class="suit-check">Club</mat-checkbox>
-    <mat-checkbox class="suit-check">Diamond</mat-checkbox>
-    <mat-checkbox class="suit-check">Heart</mat-checkbox>
+    <mat-checkbox [(ngModel)]="handFilters.suits.spade" class="suit-check">Spade</mat-checkbox>
+    <mat-checkbox [(ngModel)]="handFilters.suits.club" class="suit-check">Club</mat-checkbox>
+    <mat-checkbox [(ngModel)]="handFilters.suits.diamond" class="suit-check">Diamond</mat-checkbox>
+    <mat-checkbox [(ngModel)]="handFilters.suits.heart" class="suit-check">Heart</mat-checkbox>
   </mat-card>
 
-  <button mat-fab color="primary">Deal</button>
+  <button mat-fab color="primary" (click)="onSubmit()">Deal</button>
 </section>
