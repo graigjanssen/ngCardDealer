@@ -1,3 +1,23 @@
+.app-section {
+    width: 85%;
+    margin: 0 auto 16px auto;
+}
+
+.hand-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+
+.card-value-select {
+    margin-right: 12px;
+}
 .suit-check {
     padding-right: 18px;
+}
+
+.deal-btn {
+    font-size: 22px;
+    padding: 6px 32px;
 }

@@ -1,0 +1,32 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 72px;
+    height: 112px;
+    margin: 4px;
+}
+
+.card-suit {
+    position: absolute;
+}
+.upper {
+    top: 8px;
+    left: 8px;    
+}
+.lower {
+    transform: rotate(180deg);
+    bottom: 8px;
+    right: 8px;
+}
+.card-value {
+    position: absolute;
+    top: 50px;
+    left: 38px;
+    font-size: 42px;
+}

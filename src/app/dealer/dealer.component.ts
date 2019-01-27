@@ -15,7 +15,7 @@ export class DealerComponent {
       diamond: true,
       heart: true
     },
-    size: 1,
+    size: 5,
     min: '2',
     max: 'A'
   }

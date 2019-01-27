@@ -5,10 +5,10 @@
     </mat-card>
 
     <div *ngIf="cards" class="cards">
-        <mat-card *ngFor="let card of cards">
-            <mat-icon [svgIcon]="card.suit"></mat-icon>
-            <mat-card-title>{{card.value}}</mat-card-title>
-            <mat-icon [svgIcon]="card.suit"></mat-icon>
+        <mat-card *ngFor="let card of cards" class="card">
+            <mat-icon [svgIcon]="card.suit" class="card-suit upper"></mat-icon>
+            <mat-card-title class="card-value" [style.color]="card.suit === 'heart' || card.suit === 'diamond' ? 'red' : 'black'">{{card.value}}</mat-card-title>
+            <mat-icon [svgIcon]="card.suit" class="card-suit lower"></mat-icon>
         </mat-card>
     </div>
 </div>
