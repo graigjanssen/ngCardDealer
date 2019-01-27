@@ -1,14 +1,14 @@
 <div class="hand-container">
     <mat-card *ngIf="!cards">
-        <mat-card-title>Hand Will Display Here</mat-card-title>
-        <mat-card-subtitle>Choose filter and click Deal to view your random hand</mat-card-subtitle>
+        <mat-card-title>YOUR HAND</mat-card-title>
+        <mat-card-subtitle>Choose filter and click Deal to view your randomly selected cards</mat-card-subtitle>
     </mat-card>
 
     <div *ngIf="cards" class="cards">
         <mat-card *ngFor="let card of cards">
-            <mat-card-content>{{card.suit}}</mat-card-content>
-            <mat-card-content>{{card.value}}</mat-card-content>
-            <mat-card-content>{{card.suit}}</mat-card-content>
+            <mat-icon [svgIcon]="card.suit"></mat-icon>
+            <mat-card-title>{{card.value}}</mat-card-title>
+            <mat-icon [svgIcon]="card.suit"></mat-icon>
         </mat-card>
     </div>
 </div>

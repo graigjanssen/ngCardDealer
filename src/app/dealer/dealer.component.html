@@ -30,7 +30,7 @@
         <mat-card-subtitle>Select Suits</mat-card-subtitle>
         <mat-checkbox *ngFor="let suit of ['spade', 'club', 'diamond', 'heart']" [(ngModel)]="handFilters.suits[suit]"
             (change)="updateMaxHandSize()" class="suit-check">
-            {{suit | titlecase}}
+            <mat-icon [svgIcon]="suit"></mat-icon>
         </mat-checkbox>
     </mat-card>
 
