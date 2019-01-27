@@ -1,58 +1,5 @@
 <mat-toolbar>
   <span>Angular Card Dealer</span>
 </mat-toolbar>
-<section class="create-hand">
-  <mat-card>
-    <mat-card-title>CUSTOMIZE HAND</mat-card-title>
-    <mat-card-subtitle>Use the filters to create a custom deal</mat-card-subtitle>
-  </mat-card>
 
-  <mat-form-field>
-    <input matInput type="number" placeholder="Hand Size"
-           [(ngModel)]="handFilters.size"
-           min="1"
-           [max]="maxHandSize">
-  </mat-form-field>
-
-  <mat-card>
-    <mat-form-field>
-      <mat-select placeholder="Min Card Value"
-                  (selectionChange)="updateMaxHandSize()"
-                  [(ngModel)]="handFilters.min">
-        <mat-option *ngFor="let cardValue of cardValues; let i = index"
-                    [value]="cardValue"
-                    [disabled]="i > cardValues.indexOf(handFilters.max)">
-          {{cardValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-select placeholder="Max Card Value"
-                  (selectionChange)="updateMaxHandSize()"
-                  [(ngModel)]="handFilters.max">
-        <mat-option *ngFor="let cardValue of cardValues; let i = index"
-                    [value]="cardValue"
-                    [disabled]="i < cardValues.indexOf(handFilters.min)">
-          {{cardValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-subtitle>Select Suits</mat-card-subtitle>
-    <mat-checkbox *ngFor="let suit of ['spade', 'club', 'diamond', 'heart']"
-                  [(ngModel)]="handFilters.suits[suit]"
-                  (change)="updateMaxHandSize()" 
-                  class="suit-check">
-      {{suit | titlecase}}
-    </mat-checkbox>
-  </mat-card>
-
-  <button mat-fab color="primary"
-          (click)="onSubmit()"
-          [disabled]="handFilters.size > maxHandSize">
-    Deal
-  </button>
-</section>
+<app-dealer></app-dealer>

@@ -9,12 +9,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
+import { DealerComponent } from './dealer/dealer.component';
+import { HandComponent } from './dealer/hand/hand.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DealerComponent,
+    HandComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,8 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
