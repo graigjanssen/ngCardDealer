@@ -1,12 +1,13 @@
 <div class="hand-container">
     <mat-card *ngIf="!cards">
         <mat-card-title>YOUR HAND</mat-card-title>
-        <mat-card-subtitle>Choose filter and click Deal to view your randomly selected cards</mat-card-subtitle>
+        <mat-card-subtitle>Choose filter and click Draw to view your randomly selected cards</mat-card-subtitle>
     </mat-card>
 
     <div *ngIf="cards" class="cards">
         <mat-card *ngFor="let card of cards" class="card">
             <mat-icon [svgIcon]="card.suit" class="card-suit upper"></mat-icon>
+            <span class="cdk-visually-hidden">{{card.suit}}</span>
             <mat-card-title class="card-value" [style.color]="card.suit === 'heart' || card.suit === 'diamond' ? 'red' : 'black'">{{card.value}}</mat-card-title>
             <mat-icon [svgIcon]="card.suit" class="card-suit lower"></mat-icon>
         </mat-card>

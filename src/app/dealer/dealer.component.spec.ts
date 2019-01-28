@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { DealerComponent } from './dealer/dealer.component';
-import { HandComponent } from './dealer/hand/hand.component';
+import { DealerComponent } from './dealer.component';
+import { HandComponent } from './hand/hand.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,11 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 
-describe('AppComponent', () => {
+describe('DealerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
         DealerComponent,
         HandComponent
       ],
@@ -37,9 +35,9 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create the dealer component', () => {
+    const fixture = TestBed.createComponent(DealerComponent);
+    const dealer = fixture.debugElement.componentInstance;
+    expect(dealer).toBeTruthy();
   });
 });

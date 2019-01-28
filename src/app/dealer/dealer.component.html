@@ -30,18 +30,21 @@
 
         <mat-card>
             <mat-card-subtitle>Select Suits</mat-card-subtitle>
-            <mat-checkbox *ngFor="let suit of ['spade', 'club', 'diamond', 'heart']" [(ngModel)]="handFilters.suits[suit]"
-                (change)="updateMaxHandSize()" class="suit-check">
+            <mat-checkbox *ngFor="let suit of ['spade', 'club', 'diamond', 'heart']" 
+                        [(ngModel)]="handFilters.suits[suit]"
+                        (change)="updateMaxHandSize()" 
+                        class="suit-check"
+                        [aria-label]="'suit-' + suit">
                 <mat-icon [svgIcon]="suit"></mat-icon>
             </mat-checkbox>
         </mat-card>
     </div>
     <button mat-raised-button
-            class="deal-btn" 
+            class="draw-btn" 
             color="primary"
             (click)="onSubmit()" 
             [disabled]="handFilters.size > maxHandSize">
-        Deal
+        Draw
     </button>
 </section>
 

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { Card } from './card';
 
 @Component({
-    selector: 'app-dealer',
-    templateUrl: './dealer.component.html',
-    styleUrls: ['./dealer.component.scss']
+  selector: 'app-dealer',
+  templateUrl: './dealer.component.html',
+  styleUrls: ['./dealer.component.scss']
 })
 
 export class DealerComponent {
-    cardValues = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+  cardValues = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
   handFilters = {
     suits: {
       spade: true,
@@ -25,7 +26,7 @@ export class DealerComponent {
 
   onSubmit() {
     this.deck = this.generateDeck();
-    this.hand = this.deal(this.deck);
+    this.hand = this.draw(this.deck);
   }
 
   updateMaxHandSize() {
@@ -41,14 +42,14 @@ export class DealerComponent {
 
     deckProperties.suits.forEach(suit => {
       deckProperties.values.forEach(value => {
-        deck.push({value, suit});
+        deck.push({ value, suit });
       });
     });
 
     return deck;
   }
 
-  deal(deck: Card[]): Card[] {
+  draw(deck: Card[]): Card[] {
     const indices = [];
     const hand = [];
     while (indices.length < this.handFilters.size) {
@@ -65,20 +66,15 @@ export class DealerComponent {
 
   getDeckProperties() {
     const suits = Object.keys(this.handFilters.suits).filter(suit => this.handFilters.suits[suit]);
-    
+
     const start = this.cardValues.indexOf(this.handFilters.min);
     const end = this.cardValues.indexOf(this.handFilters.max) + 1;
     const values = this.cardValues.slice(start, end);
 
-    return {suits, values};
+    return { suits, values };
   }
 
   getRandomIndex() {
     return Math.floor(Math.random() * this.deck.length);
   }
 }
-
-interface Card {
-    value: string;
-    suit: string;
-  }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Card } from '../card';
 
 @Component({
     selector: 'app-hand',
@@ -8,9 +9,4 @@ import { Component, Input } from '@angular/core';
 
 export class HandComponent {
     @Input() cards: Card[];
-}
-
-interface Card {
-    value: string;
-    suit: string;
 }
